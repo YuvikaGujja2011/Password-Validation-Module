@@ -1,0 +1,85 @@
+<html>
+        <body><!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <h3>The password Validation Module</h3>
+        <p id="p1">Check this module by submitting the form.</p>
+        <div>
+            <form>
+                Username
+                <br>
+                <input type="text">
+                <br>
+                <br>
+                Password
+                <br>
+                <input type="password">
+                <br>
+                <br>
+            </form>
+            <button onclick="validation()" style="background-color:green;color:white;width:100%;padding:10px;">Submit</button>
+           <b> <p style="color:red"></p></b>
+        </div>
+    </body>
+</html></body>
+        <style>h3{
+    background-color: green;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+#p1{
+    text-align: center;
+}
+div{
+    background-color: lightgray;
+    padding:10px;
+}
+input{
+    width:100%;
+    padding:10px;
+}
+</style>
+        <script>function validation(){
+    var password=document.getElementsByTagName("input")[1].value;
+    var i;
+    var flag=false;
+    var result="";
+    for(i=0;i<password.length;i++){
+        var c=password.charCodeAt(i);
+        if(c>=65 &&c<=90){
+        flag=true;
+        break;
+    }}
+        if(flag==false)
+        result+="<br><br>X   Password must have a capital letter";
+        flag=false
+        var a;
+    for(a=0;a<password.length;a++){
+        var c=password.charCodeAt(a);
+        if(c>=96 &&c<=122){
+            flag=true;
+            break;
+        }}
+        if(flag==false)
+        result+="<br><br>X   Password must have a lowercase letter";
+        flag=false;
+        var b;
+    for(b=0;b<password.length;b++){
+        var c=password.charCodeAt(b);
+        if(c>=48 &&c<=57){
+            flag=true;
+            break;
+        }}
+        if(flag==false)
+        result+="<br><br>X   Password must have a number";
+        flag=false
+        if(password.length<8)
+        result+="<br><br>X   Password must have 8 characters";
+        document.getElementsByTagName("p")[1].innerHTML=result;
+    }
+
+</script>
+      </html>
